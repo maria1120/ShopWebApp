@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>Shop Web App</h1>
+<h2 th:text="'Welcome '+${session.customer.customerName}+'!'"></h2>
+<hr> <!-- Horizontal Row -->
+<h3>Receipt</h3>
+<table border="1">
+	<!-- tr: Table Row -->
+	<tr>
+		<!-- Table Header -->
+		<th>Customer ID</th>
+		<th>Customer Name</th>
+		<th>Product Name</th>
+		<th>Price per Unit</th>
+		<th>Total Units</th>
+		<th>Total Price</th>
+		
+		
+	</tr>
+	<tr>
+	<!-- table data -->
+		<td th:text="${receipt.customerId}"></td>
+		<td th:text="${receipt.customerName}"></td>
+		<td th:text="${receipt.productName}"></td>
+		<td th:text="${receipt.productPrice}"></td>
+		<td th:text="${receipt.quantity}"></td>
+		<td th:text="${receipt.total}"></td>
+		
+		
+	</tr>
+</table>
+<br><br>
+<a href="./">Go Back to Menu Page</a>
+
+</body>
+</html>

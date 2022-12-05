@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>Shop Web App</h1>
+<h2 th:text="'Welcome '+${session.customer.customerName}+'!'"></h2>
+<form action="./purchise" method="post">
+	Enter Product Id :<input type="text" name="productId"><br><br>
+	Enter Quantity : <input type="text" name="units"><br><br>
+	<input type="submit" value="Buy">
+	
+	<h2 th:text="${message}"></h2>
+	<br><br>
+	
+<hr> <!-- Horizontal Row -->
+<h3>List of Products</h3>
+<table border="1">
+	<!-- tr: Table Row -->
+	<tr>
+		<!-- Table Header -->
+		<th>Product ID</th>
+		<th>Product Name</th>
+		<th>Price per Unit</th>
+		
+		
+	</tr>
+	<tr th:each="product : ${products}">
+	<!-- table data -->
+		<td th:text="${product.productId}"></td>
+		<td th:text="${product.productName}"></td>
+		<td th:text="${product.productPrice}"></td>
+		
+		
+	</tr>
+</table>
+<br><br>
+<a href="./">Go Back to Menu Page</a>
+</form>
+</body>
+</html>
